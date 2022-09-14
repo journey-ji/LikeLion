@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+body {
+    background-color: #5B2386;
+}
+.app {
+    margin: 0 auto;
+    text-align: center;
+}
+.tit-timelaw {
+    height: 400px;
+    text-align: center;
+    position: relative;
+}
+.tit-timelaw img:nth-child(1){
+    position: inherit;
+    width: 564px;
+    height: 112px;
+    margin-top: 142px;
+    z-index: 2;
+}
+.tit-timelaw img:nth-child(2){
+    width: 261px;
+    height: 265px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);   
+    z-index: 1;
+}
+
+.img-txt {
+    display: block;
+    margin: 0 auto 84px;
+}
+
+.quote {
+    position: relative;
+    line-height: 24px;
+}
+.img-quotes {
+    display: block;
+    margin: 0 auto ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.tit-desc {
+    font-family: 'GmarketSansBold';
+}
+.txt-desc {
+    text-align: center;
+    color: white;
+    margin-bottom: 100px;
+    font-family: 'GmarketSansMedium';
+}
+.txt-time {
+    margin-bottom: 112px;
+}
+.cont-inp {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 148px;
+    
+}
+.txt-wannabe {
+    font-family: 'GmarketSansMedium';
+    margin-bottom: 28px;
+    line-height: 300%;
+}
+input[type=text] {
+    width: 228px;
+    height: 57px;
+    border-radius: 7px;
+    border: 0;
+    outline: 0;
+}
+input[type=text]::placeholder {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'GmarketSansMedium';
+}
+.btn-exc {
+    width: 565px;
+    height: 66px;
+    border-radius: 56px;
+    background-color: #FCEE21;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5B2386;
+    outline: 0;
+    border: 0;
+}
+.form-cursor {
+    vertical-align:text-top;
+}
+
+.cont-result {
+    display: block;
+    height: 300px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    /* margin-bottom: 132px; */
+}
+.btns {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+.btn-go {
+    width: 356px;
+    height: 66px;
+    border-radius: 56px;
+    background-color: #FCEE21;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5B2386;
+    outline: 0;
+    border: 0; 
+    margin-right: 8px;
+}
+.btn-share {
+    width: 191px;
+    height: 66px;
+    border-radius: 56px;
+    background-color: white;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5B2386;
+    outline: 0;
+    border: 0;
+
+}
+.txt-span {
+    font-size: 72px;
+    font-weight: bold;
+    
+}
+.cont-footer {
+    display: block;
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+    font-size: 12px;
+}
+.cont-footer h2 {
+    visibility: hidden;
+}
+.blind {
+    visibility: hidden;
+}
+.cont-modal{
+    visibility: hidden;
+}
