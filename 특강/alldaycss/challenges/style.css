@@ -1,0 +1,52 @@
+header img {
+    vertical-align: top;
+}
+
+body {
+    background-image: url(./images/bg.png);
+    background-size: cover;
+}
+
+.wrap {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+header {
+    margin-top: 100px;
+}
+
+main {
+    background-color: #9d6134;
+    color: white;
+    text-align: left;
+    
+    border-color: #9d6134;
+    border-bottom-width: 17px;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border-bottom-style: ridge;
+    padding-bottom: 5px;
+}
+main img {
+    width: 200px;
+    height: auto;
+}
+
+
+.texts {
+    padding: 0 10px 0 10px;
+}
+.texts h1 {
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+}
+.texts p {
+    font-size: 11px;
+    margin-top: 3px;
+}
