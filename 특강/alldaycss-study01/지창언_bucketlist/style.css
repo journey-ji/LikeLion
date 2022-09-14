@@ -1,0 +1,65 @@
+.wrapper {
+    margin: 0 auto;
+    border: 1px solid none ;
+    box-shadow: 0px 0px 20px -11px black;
+    border-radius: 20px;
+    width: 400px;
+    margin-top: 100px;
+    /* 아래속성 주면 보더 둥근거 먹음 */
+    /* overflow: hidden; */
+}
+/* 헤딩요소에 h1테두리에 보더 left  */
+header {
+    margin:0 auto;
+    border-bottom: 2px solid #DDDDDD;
+    height: 110px;
+    text-align: left;
+}
+
+
+header div {
+    padding-top: 40px;
+}
+/* 헤더 사각형 */
+header div div {
+    display: inline-block;
+    width: 10px;
+    height: 33px;
+    background-color: #FF1493;
+    padding: 0;    
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.wrapper h1 {
+    display: inline-block;
+    background-color: white;
+    color: #FF1493;
+    margin:0;
+    vertical-align: middle;
+    font-size: 28px;
+    
+}
+.wrapper main {
+    background-color: #EFEFEF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+ul {
+    list-style: none;
+    padding:20px 30px;
+    margin:0;
+    margin-top: 10px 0;
+}
+li {
+    border: 3px solid #AAAAAA;
+    border-radius: 2px;
+    margin: 10px auto;
+    background-color: white;
+    padding:8px;
+    font-weight:400;
+}
+li:nth-child(2) {
+    color: #1e91ff;
+    border: 3px solid #1e91ff;
+}
