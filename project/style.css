@@ -32,7 +32,7 @@
     
 }
 .find-acc img {
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 .find-acc a {
     font-family: 'SpoqaHanSansNeo-Regular';
@@ -47,7 +47,7 @@
     float: right;
 }
 .sign-in img {
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 .sign-in a {
     font-family: 'SpoqaHanSansNeo-Regular';
