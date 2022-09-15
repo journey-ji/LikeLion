@@ -1,0 +1,14 @@
+article {
+    background-color: rgb(139 173 217);
+    width: 200px;
+    height: 200px;
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+}
+.right-side {
+    background-color: rgb(242 103 53);
+    width: 80px;
+    height: 80px;
+}
