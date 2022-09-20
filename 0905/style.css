@@ -1,0 +1,30 @@
+img {
+    vertical-align:top;
+}
+header {
+    background-color: white;
+    height: 100px;
+    margin:0px auto;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+nav {
+    
+}
+header li {
+    list-style: none;
+    float: left;
+    margin-left: 80px;
+}
+
+main {
+    height: 700px;
+    background-color: #FFCF5C;
+}
+
+main img {
+    
+    height: 700px;
+}
