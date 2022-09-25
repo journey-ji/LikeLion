@@ -1,7 +1,13 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
 body {
     width: 1920px;
     background: #EAE8FE;
     margin: 0 auto;
+    font-family: "Noto Sans KR";
 }
 body .img-logo {
     display: block;
@@ -14,17 +20,20 @@ body .img-logo {
     width: 1920px;
     height: 963px;
     justify-content: center;
+    margin-top: 67px;
 }
 .v-machine .cont-machine {
     display: flex;
     flex-direction: column;
-    width: 360px;
-    height: 545px;
+    width: 306px;
+    height: 491px;
     left: 0px;
     top: 0px;
-    padding: 27px;
+    padding: 27px 27px 28px;
     background-color: white;
+    margin-right: 14px;
 }
+
 
 .v-machine .cont-machine .cont-menus {
     display: grid;
@@ -33,14 +42,30 @@ body .img-logo {
     margin-bottom: 20px;
 }
 .v-machine .cont-machine .cont-menus figure {
+    position: relative;
     width: 94px;
     height: 130px;
     top: 0;
     left: 0;
     border-radius: 10px ;
-    
     text-align: center;
     box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.10);
+}
+.v-machine .cont-machine .cont-menus figure .sold-out {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 2;
+    border-radius: inherit;
+}
+.v-machine .cont-machine .cont-menus figure .sold-out img {
+    width: 57px;
+    height: 43px;
+    text-align: center;
+    margin-top: 45px;
 }
 .v-machine .cont-machine .cont-menus figure img {
     width: 35.86px;
@@ -55,6 +80,20 @@ body .img-logo {
     border: none;
     color: white;
 }
+.v-machine .cont-machine .cont-menus figure figcaption{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 13px;
+    margin: 6px auto ;
+}
+.coke-click-on {
+    border: 3px solid #6327FE;
+    margin: -3px;
+    
+}
+
 .v-machine .cont-machine .cont-trade {
     display: grid;
     grid-template-columns: 200px 94px;
@@ -62,15 +101,24 @@ body .img-logo {
     grid-gap: 12px;
     
 }
-.v-machine .cont-machine .cont-trade p {
+.v-machine .cont-machine .cont-trade .cont-balance {
+    display: flex;
     background-color: #EAE8FE;
     border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px 6px;
+    
 }
 .v-machine .cont-machine .cont-trade button {
     background-color: white;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.10);
+}
+.v-machine .cont-machine .cont-trade button:nth-child(6){
+    background-color: #6327FE;
+    color: white;
 }
 .v-machine .cont-machine .cont-trade .cont-picked {
     background-color: #EAE8FE;
@@ -81,16 +129,144 @@ body .img-logo {
     flex-direction: column;
     width: 360px;
     height: 545px;
+    margin-left: 14px;
 }
 
 .v-machine .cont-pocket .cont-money {
     background-color: white;
     width: 360px;
     height: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    padding: 9px 27px;
+    box-sizing: border-box;
+    flex-grow: 0;
+}
+.v-machine .cont-pocket .cont-money .cont-line {
+    display: flex;
+    width: 306px;
+    height: 32px;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px 6px;
+    box-sizing: border-box;
 }
 .v-machine .cont-pocket .cont-items {
+    
     background-color: white;
     width: 360px;
-    height: 480px;
+    height: 476px;
+    padding: 25px 27px 26px;
+    box-sizing:border-box;
+    flex-grow: 0;
 }
+
+.v-machine .cont-pocket .cont-items p:nth-child(1) {
+    display: block;
+    width: auto;
+    height: 20px;
+    margin: 0 auto 13px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.cont-cokes {
+    display: flex;
+    flex-direction: column;
+    background-color: #EAE8FE;
+    padding: 12px 18px 0 12px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+.cont-cokes ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cont-cokes::-webkit-scrollbar {
+    width: 2px;
+}
+.cont-cokes::-webkit-scrollbar-thumb {
+    height: 78px;
+    background-color: white;
+    border-radius: 50px;
+}
+.cont-cokes::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.cont-cokes ul li {
+    display: flex;
+    flex-direction: row;
+    width: 170px;
+    height: 46px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 6px;
+    border-radius: 5px;
+}
+.cont-cokes ul li p {
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    justify-content: center;
+}
+.cont-cokes ul li figure {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cont-cokes ul li figure img {  
+    width: 18px;
+    height: 33px;
+    padding: 6px 10px 7px;
+}
+.cont-cokes ul li figure figcaption {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 13px;
+}
+.cont-cokes ul li p {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+.cont-trade .cont-cokes ul li img {
+    width: 18px;
+    height: 33px;
+}
+.v-machine .cont-pocket .cont-items .cont-cokes {
+    width: 306px;
+    height: 364px;
+    background-color: #EAE8FE;
+}
+.v-machine .cont-pocket .cont-items .cont-cokes ul li {
+    width: 276px;
+    height: 46px;    
+}
+.v-machine .cont-pocket .cont-items p:nth-child(3) {
+    display: block;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: right;
+    margin-top: 6px;
+}
+
