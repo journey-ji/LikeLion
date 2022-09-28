@@ -1,13 +1,10 @@
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: gray;
+.square-av {
+  width: 100px;
+  height: 100px;
 }
 
-.aside {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
+.circle-av {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
 }/*# sourceMappingURL=mixin.css.map */

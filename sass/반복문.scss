@@ -1,0 +1,11 @@
+@function sigma($number) {
+    $result: 1;
+    @for $i from 1 to $number {
+        $result: $result+$i;
+    }
+    @return $result;
+
+}
+.one {
+    width: sigma(10)px;
+}
