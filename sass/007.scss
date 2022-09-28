@@ -1,0 +1,26 @@
+$four : #fff;
+$five : true;
+$ix : null;
+
+
+$font-size : 10px 12px 16px;
+
+
+.test2 {
+    font-size: nth($list: $font-size, $n:2);
+}
+
+.test3 {
+    font-size: nth($font-size,1);
+}
+
+$font-weights: ('regular':400, "medium":500, 'bold':700);
+
+
+
+.tes4 {
+    font-weight: map-get($font-weights, "medium");
+}
+.tes5 {
+    font-weight: map-get($font-weights, "bold");
+}
