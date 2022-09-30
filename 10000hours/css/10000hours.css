@@ -180,5 +180,35 @@ input[type=text]::placeholder {
     visibility: hidden;
 }
 .cont-modal{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    top: 50vh;
+    left: 50vw;
+    width: 800px;
+    height: 800px;
     visibility: hidden;
+    transform: translate(-50%,-50%);
+    z-index: 20;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    
+}
+.cont-modal h2 {
+    margin-top: 76px;
+}
+.cont-modal button {
+    margin-bottom: 68px;
+}
+.cont-modal img{
+    display: block;
+    
+}
+.cont-modal img:nth-child(2) {
+    margin-bottom: 30px;
+}
+.cont-modal img:nth-child(4) {
+    margin-bottom: 74px;
 }
