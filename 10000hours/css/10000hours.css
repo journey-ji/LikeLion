@@ -120,6 +120,7 @@ input[type=text]::placeholder {
     color: #5B2386;
     outline: 0;
     border: 0;
+    cursor: pointer;
 }
 .form-cursor {
     vertical-align:text-top;
@@ -148,6 +149,7 @@ input[type=text]::placeholder {
     outline: 0;
     border: 0; 
     margin-right: 8px;
+    margin-bottom: 24px;
 }
 .btn-share {
     width: 191px;
@@ -159,7 +161,6 @@ input[type=text]::placeholder {
     color: #5B2386;
     outline: 0;
     border: 0;
-
 }
 .txt-span {
     font-size: 72px;

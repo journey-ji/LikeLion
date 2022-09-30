@@ -28,29 +28,29 @@
         <form class="cont-inp">
             <p class="txt-wannabe">
                 나는
-                <input type="text" class="" placeholder="예)프로그래밍" required>
+                <input id="input-exe-job" type="text" class="" placeholder="예)프로그래밍" required>
                 전문가가 될 것이다.
             </p>
             <p class="txt-time">
                 그래서 앞으로 매일 하루에
-                <input type="text" placeholder="예)5시간" required> 
+                <input id="input-exe-time" type="text" placeholder="예)5시간" required> 
                 시간씩 훈련할 것이다.
             </p>
-            <button class="btn-exc">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
+            <button type="button" class="btn-exc">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
             <img src="img/click.png" class ='form-cursor'alt="">
         </form>
         <section id="result" class="cont-result">
             <h2 class="blind">결과 확인</h2>
             <p class="txt-wannabe">
                 당신은 
-                <span class="txt-span">프로그래밍</span>
+                <span id="txt-exe-job" class="txt-span">프로그래밍</span>
                 전문가가 되기 위해서<br>
-                대략 <span class="txt-span">5110</span>
+                대략 <span id="txt-exe-time" class="txt-span">5110</span>
                 일 이상 훈련하셔야 합니다! :)
             </p>
             <div class="btns">
                 <button class="btn-go">훈련하러 가기 GO!GO!</button>
-                <button class="btn-share">공유하기</button>
+                <div class="addthis_inline_share_toolbox"></div>
             </div>
         </section>
     </main>
@@ -72,18 +72,31 @@
         <img src="img/licat.png" alt="응원하는 라이캣">
         <button class="btn-go btn-real-go">종료하고 진짜 훈련하러 가기GO!GO!</button>
     </section>
-    
-    <script>
-        const modal = document.querySelector('.cont-modal');
-        const btnOpenPop = document.querySelector('.btn-go');
-        const btnClosePop = document.querySelector('.btn-real-go')
 
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    
+
+    <script>
+        
+        const modal = document.querySelector('.cont-modal');
+        
+
+        const btnOpenPop = document.querySelector('.btn-go');
+        
+        const btnClosePop = document.querySelector('.btn-real-go')
+        const btnExe = document.querySelector('.btn-exc')
         btnOpenPop.addEventListener('click', ()=>{
             modal.style.visibility = 'visible';
         });
+        
         btnClosePop.addEventListener('click', ()=>{
             modal.style.visibility = 'hidden';
         });
+        btnExe.addEventListener('click',()=>{
+            document.getElementById('txt-exe-job').innerText = document.getElementById('input-exe-job').value;
+            document.getElementById('txt-exe-time').innerText = 10000/document.getElementById('input-exe-time').value;
+        })
     </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-632ac93dafd4efc9"></script>
 </body>
 </html>
