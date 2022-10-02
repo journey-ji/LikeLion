@@ -6,75 +6,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Journey Ji</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <style>
+    @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+  }
+  html > body {
+      font-family: "GmarketSansMedium", "sans-serif";
+  }
+  </style>
 </head>
-<body class="m-0 pb-24 px-8 w-screen">
-  <div class="my-24 flex flex-col justify-center items-center">
+<body class="leading-8 m-0 pb-24 px-8 w-screen">
+  <div class="mx-auto max-w-screen-xl my-24 flex flex-col justify-center items-center">
     <div class="w-full border-b-4 border-pink-500">
       네비게이션
       <a href="#profile">프로필</a>
-      <a href="#pr">자기소개</a>
+      <a href="#exp">경험</a>
       <a href="#skills">기술스택</a>
       <a href="#projects">프로젝트</a>
     </div>
     <div id="profile" class="w-full py-8 flex items-center border-b-4 border-[#F7A76C]">
-      <img class="w-32 inline-block mt-8 mb-8" src="./profile.png" alt="">
+      <img class="w-60 inline-block mt-8 mb-8" src="./profile.png" alt="">
       <span class="ml-8 flex flex-col" >
-        <h2 class="text-2xl text-[#F7A76C] mb-8">안녕하세요. 프론트엔드 개발자 홍길동입니다.</h2>
+        <h2 class="font-bold text-2xl mb-8 ">프론트엔드 개발자 홍길동입니다.</h2>
         <p>개발하는 것이 적성에 맞으며, 새로운 기술을 배우는데 보람을 느낍니다.</p>
         <p>사람들을 자주 만나 소통과 교류하는 것을 즐깁니다.</p>
         <p>현재 멋쟁이사자처럼 프론트엔드 스쿨을 통해 가파른 성장 중입니다.</p>
-        <ul>
-          <li>홍길동</li>
-          <li>연락처 : 010-4545-4545</li>
-          <li>이메일 : Lorem@lorem.ipsum</li>
-          <li>깃허브 : Lorem, ipsum dolor</li>
-          <li>개발 블로그 : Lorem, ipsum dolor.</li>
+        <ul class="mt-8">
+          <li><strong class="text-2xl">홍길동</strong></li>
+          <li><a href="tel:010-0000-0000">📞연락처</a> : 010-0000-0000</li>
+          <li><a href="mailto:journeyji@gmail.com">📧이메일</a> : Lorem@gmail.com</li>
+          <li><a href="https://github.com/journey-ji">깃허브</a> : github.com/journey-ji</li>
+          <li><a href="https://velog.io/@Lorem">개발 블로그</a> : velog.io/@Lorem</li>
         </ul>
       </span>
     </div>
-    <div id="pr" class="w-full py-8  border-b-4 border-[#E0D98C]">
-      <h2 class="text-[#E0D98C] text-2xl mb-8" >경험</h2>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet voluptatum, autem voluptatem in est aliquid atque voluptate rem! Obcaecati harum fugit soluta vel ipsa, quas ducimus nihil aperiam. Aperiam, eum.
-      Dolor nulla asperiores adipisci quidem sunt ratione omnis aliquam at architecto quibusdam! Iure atque, at corporis esse, illo necessitatibus culpa aliquid pariatur ea, praesentium ab aperiam. Officia veritatis vitae consequuntur.
+    <div id="exp" class="w-full py-8  border-b-4 border-[#E0D98C]">
+      <h2 class="font-bold  text-2xl mb-8" >경험</h2>
+      <p>
+        현재 멋쟁이사자처럼 프론트엔드 스쿨 교육에 참여하고 있습니다. 이전 대학수업을 들으면서는 얇고 폭넓은 기술과 CS기반 지식을 갈고 닦았다면, 이번 교육을 통해 프론트엔드 개발자로서 빈틈을 채워나가는 경험을 하고 있습니다. HTML/CSS와 JavaScript뿐 아니라, React 라이브러리, Firebase 등의 교육을 통해 프론트엔드 기술을 탄탄하게 쌓고 있습니다.
+      </p>
+      <p>
+        또한 대학생활간 수강한 컴퓨터네트워크, 컴퓨터구조, 운영체제, 알고리즘 등의 과목을 통해 CS기반지식을 터득하여왔고, 수 차례의 프로젝트를 통해서 팀과 협업하는 경험을 쌓아왔습니다.
+      </p>
+      
     </div>
     <div id="skills" class="w-full py-8 border-b-4 border-[#C3FF99]">
-      <h2 class="text-2xl mb-8">기술스택</h2>
-      <ul>
+      <h2 class="font-bold text-2xl mb-8">기술스택</h2>
+      <ul class="">
         <li>
-          <strong>HTML/CSS</strong>
+          <strong>HTML/CSS</strong> : 웹 애플리케이션을 구축하는데에 불편함 없이 사용가능한 정도입니다.
         </li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Bootstrap</li>
-        <li>Git</li>
+        <li>
+          <strong>JavaScript</strong> : 생각하는대로 코드를 작성할 수 있으나, 효율성을 고려하려면 시간이 좀 더 걸리는 수준입니다.
+        </li>
+        <li>
+          <strong>React, Bootstrap</strong> : 과거 프로젝트 경험시 일부 적용한 경험이 있습니다.
+        </li>
+        <li>
+          <strong>Tailwind</strong> : 익숙한 클래스들은 편하게 사용가능하며, 그렇지 않은경우는 cheat sheet을 참고하면서 사용가능합니다.
+        </li>
+        <li>
+          <strong>Git</strong> : 기본적인 clone, pull, add, commit, push 가 익숙하며, merge와 fetch의 차이점을 숙지하고 있습니다. 과거 프로젝트 경험으로 merge, pull request 등 무리없이 가능합니다.
+        </li>
       </ul>
       
     </div>
 
     <div id="projects" class="w-full py-8 border-b-4 border-[#F7A76C]">
-      <h2 class="text-2xl mb-8">최근 프로젝트</h2>
+      <h2 class="font-bold text-2xl mb-8">최근 프로젝트</h2>
       <ul class="flex flex-col gap-8">
         <li class="flex ">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum doloremque architecto quibusdam vel quod magnam, id perferendis nam ratione sunt odio animi magni facere tempore rerum deleniti. Non, deleniti?</p>
-          <a class="w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
-          <img class="" src="./img/vendingMachine.PNG" alt=""></a>
+          <span>
+            <p class="text-lg">HTML/CSS JavaScript 로 구현한 자판기 입니다. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolore mollitia deserunt placeat quisquam corrupti! </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quidem aut magni distinctio, repellendus beatae cupiditate numquam eos veniam, nam dignissimos quia! Sequi, nulla sint. Ea, laudantium. Ullam, inventore! Unde.</p>
+          </span>
+          <a class="hover:scale-105 duration-200 w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
+          <img class="" src="./img/vendingmarchine.png" alt=""></a>
         </li>
         <li class="flex ">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum doloremque architecto quibusdam vel quod magnam, id perferendis nam ratione sunt odio animi magni facere tempore rerum deleniti. Non, deleniti?</p>
-          <a class="w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
-          <img class="" src="./img/tailwindPortfolio.PNG" alt=""></a>
+          <a class="hover:scale-105 duration-200 w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
+          <img class="" src="./img/project1.jpg" alt=""></a>
         </li>
         <li class="flex ">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum doloremque architecto quibusdam vel quod magnam, id perferendis nam ratione sunt odio animi magni facere tempore rerum deleniti. Non, deleniti?</p>
-          <a class="w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
-          <img class="" src="./img/photo01.png" alt=""></a>
+          <a class="hover:scale-105 duration-200 w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
+          <img class="" src="./img/project2.jpg" alt=""></a>
         </li>
         
       </ul>
     </div>
   </div>
-
+<script>
+  extend: {
+    fontFamily: {
+      gmk: ["GmarketSansMedium","sans-serif"]
+    }
+  }
+</script>
 </body>
 </html>
 
