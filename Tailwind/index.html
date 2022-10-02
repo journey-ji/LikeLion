@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,49 +8,69 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body>
+<body class="m-0 pb-24 px-8 w-screen">
   <div class="my-24 flex flex-col justify-center items-center">
-    <div class="border-b-4 border-pink-500">
+    <div class="w-full border-b-4 border-pink-500">
       네비게이션
       <a href="#profile">프로필</a>
       <a href="#pr">자기소개</a>
       <a href="#skills">기술스택</a>
       <a href="#projects">프로젝트</a>
     </div>
-    <div id="profile" class="py-8 flex items-center border-b-4 border-[#F7A76C]">
+    <div id="profile" class="w-full py-8 flex items-center border-b-4 border-[#F7A76C]">
       <img class="w-32 inline-block mt-8 mb-8" src="./profile.png" alt="">
       <span class="ml-8 flex flex-col" >
-        <span>홍길동</span>
-        <span>연락처 : 010-4545-4545</span>
-        <span>이메일</span>
-        <span>깃허브</span>
-        <span>개발 블로그</span>
+        <h2 class="text-2xl text-[#F7A76C] mb-8">안녕하세요. 프론트엔드 개발자 홍길동입니다.</h2>
+        <p>개발하는 것이 적성에 맞으며, 새로운 기술을 배우는데 보람을 느낍니다.</p>
+        <p>사람들을 자주 만나 소통과 교류하는 것을 즐깁니다.</p>
+        <p>현재 멋쟁이사자처럼 프론트엔드 스쿨을 통해 가파른 성장 중입니다.</p>
+        <ul>
+          <li>홍길동</li>
+          <li>연락처 : 010-4545-4545</li>
+          <li>이메일 : Lorem@lorem.ipsum</li>
+          <li>깃허브 : Lorem, ipsum dolor</li>
+          <li>개발 블로그 : Lorem, ipsum dolor.</li>
+        </ul>
       </span>
     </div>
-    <div id="pr" class="py-8  border-b-4 border-[#E0D98C]">
-      <h2>자기소개</h2>
-      <span>
-        프론트엔드 개발자입니다.<br>
-        개발하는 것이 적성에 맞으며, 새로운 기술을 배우는데 보람을 느낍니다.<br>
-        사람들을 자주 만나 소통과 교류하는 것을 즐깁니다.<br>
-        현재 멋쟁이사자처럼 프론트엔드 스쿨을 통해 가파른 성장 중입니다.<br>
-      </span>
+    <div id="pr" class="w-full py-8  border-b-4 border-[#E0D98C]">
+      <h2 class="text-[#E0D98C] text-2xl mb-8" >경험</h2>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet voluptatum, autem voluptatem in est aliquid atque voluptate rem! Obcaecati harum fugit soluta vel ipsa, quas ducimus nihil aperiam. Aperiam, eum.
+      Dolor nulla asperiores adipisci quidem sunt ratione omnis aliquam at architecto quibusdam! Iure atque, at corporis esse, illo necessitatibus culpa aliquid pariatur ea, praesentium ab aperiam. Officia veritatis vitae consequuntur.
     </div>
-    <div id="skills" class="py-8 border-b-4 border-[#C3FF99]">
-      <h2>기술스택</h2>
-      <span>HTML/CSS, JavaScript, React, Bootstrap, Node.js, Git</span>
+    <div id="skills" class="w-full py-8 border-b-4 border-[#C3FF99]">
+      <h2 class="text-2xl mb-8">기술스택</h2>
+      <ul>
+        <li>
+          <strong>HTML/CSS</strong>
+        </li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Bootstrap</li>
+        <li>Git</li>
+      </ul>
+      
     </div>
 
-    
-    <div id="projects" class="py-8 border-b-4 border-[#F7A76C]">
-      <h2>최근 프로젝트</h2>
-      <ul class="grid grid-cols-3 gap-4">
-        <li class="w-48 h-48 border-2 border-black rounded-l">프로젝트1</li>
-        <li>프로젝트2</li>
-        <li>프로젝트3</li>
-        <li class="w-48 h-48 border-2 border-black rounded-l">프로젝트4</li>
-        <li>프로젝트5</li>
-        <li>프로젝트6</li>
+    <div id="projects" class="w-full py-8 border-b-4 border-[#F7A76C]">
+      <h2 class="text-2xl mb-8">최근 프로젝트</h2>
+      <ul class="flex flex-col gap-8">
+        <li class="flex ">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum doloremque architecto quibusdam vel quod magnam, id perferendis nam ratione sunt odio animi magni facere tempore rerum deleniti. Non, deleniti?</p>
+          <a class="w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
+          <img class="" src="./img/vendingMachine.PNG" alt=""></a>
+        </li>
+        <li class="flex ">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum doloremque architecto quibusdam vel quod magnam, id perferendis nam ratione sunt odio animi magni facere tempore rerum deleniti. Non, deleniti?</p>
+          <a class="w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
+          <img class="" src="./img/tailwindPortfolio.PNG" alt=""></a>
+        </li>
+        <li class="flex ">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum doloremque architecto quibusdam vel quod magnam, id perferendis nam ratione sunt odio animi magni facere tempore rerum deleniti. Non, deleniti?</p>
+          <a class="w-1/2 flex-shrink-0" href="https://journey-ji.github.io/LikeLion/VendingMachine/index.html">
+          <img class="" src="./img/photo01.png" alt=""></a>
+        </li>
+        
       </ul>
     </div>
   </div>
