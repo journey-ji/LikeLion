@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 메모리 할당 
+
+    // 객체의 복사
+    // 얕은 복사와 깊은 복사
+
+    //이름과 이메일 변경
+
+    // vip_user
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /// 메모리 할당
+    let test1 ={};
+    let test2 ={};
+    console.log('위의 두 객체는 같을까요 ?')
+    console.log(test1 === test2);
+
+
+
+
+    // 배열 혹은 객체의 얕은 복사와 깊은 복사
+    // 얕은복사 : 빨라
+    // 깊은 복사를 사용해야 하는 이유 ? 원본보존
+    console.log('얕은 복사와 깊은 복사')
+    let user1= {
+        id: "licat",
+        pw: "1234",
+        name: "leehojun",
+        email: "paul@weniv.com",
+        active: true,
+    };
+
+    let user2 = user1;        // 얕은 복사
+    let user3 = {...user1};   // 깊은 복사
+    console.log(user1)
+    console.log(user2)
+    console.log(user3)
+   
+    // 이름과 이메일 변경
+
+    user1.name = "ChangEon";
+    user1.email = "journeyji95@gmail.com"
+    console.log('user1의 name, email 값 변경 이후')
+    console.log(user1)
+    console.log(user2)
+    console.log(user3)
+    
+    
+    // 그런데 짜잔,,,
+
+    let vip_user1= {
+        id: "licat",
+        pw: "1234",
+        name: "leehojun",
+        email: {
+          1: "paul@weniv.com",
+          2: "journeyji95@gmail.com",
+        },
+        active: true,
+    };
+
+    console.log('vip_user')
+    let vip_user2 = vip_user1;
+    let vip_user3 = {...vip_user1};
+    console.log(vip_user1.email === vip_user2.email)
+    console.log(vip_user1.email === vip_user3.email)
+
+  </script>
+</body>
+</html>
