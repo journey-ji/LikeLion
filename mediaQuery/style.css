@@ -1,98 +1,183 @@
-@font-face {
-  font-family: 'SpoqaHanSansNeo-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+/* reset */
+body,
+h1,
 p {
-  font-family: 'SpoqaHanSansNeo-Regular';
+	margin: 0;
 }
-@media screen and (max-width: 1920px) {
-  .wrapper {
-    display: flex;
-    width: 100%;
-    padding: 240px 360px 260px;
-    column-gap: 100px;
-  }
-  .cont-txt {
-    text-align: left;
-  }
-  .cont-txt strong {
-    font-weight: bold;
-  }
-  .cont-txt h1 {
-    font-size: 70px;
-    line-height: 88px;
-  }
 
-  .cont-txt p {
-    font-size: 20px;
-    margin-top: 40px;
-    line-height: 30px;
-  }
-  .cont-imgs {
-    display: flex;
-    flex-direction: column;
-    width: 486px;
-    height: 580px;
-    row-gap: 20px;
-  }
-  .cont-imgs > div {
-    position: relative;
-    display: block;
-    width: 486px;
-    height: 280px;
-    border-radius: 20px;
-  }
-  .cont-imgs > div:nth-child(1){
-    background: url('./Rectangle\ 2.png'), rgba(18, 19, 20, 0.3);
-  }
-  .cont-imgs > div:nth-child(2){
-    background: url('./Rectangle\ 3.png'), rgba(18, 19, 20, 0.3);
-  }
-  .cont-imgs div p {
-    font-size: 30px;
-    color: white;
-    margin-top: 40px;
-    margin-left: 40px;
-    z-index: 10;
-  }
-  .cont-imgs div a {
-    position: absolute;
-    top: 230px;
-    left: 373px;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 20px;
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-  }
-  .cont-imgs div .arrow {
-    position: absolute;
-    top: 235px;
-    left: 443px;
-    color: white;
-  }
-  .arrow {
-    position: relative;
-  }
-  .arrow::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 8px;
-    height: 8px;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
-    transform: rotate(45deg);
-  }
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
-@media screen and (max-width: 768px) {
-  
+
+a {
+	text-decoration: none;
 }
-@media screen and (max-width: 390px) {
-  
+
+/* font */
+@font-face {
+	font-family: "SpoqaHanSansNeo-Regular";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SpoqaHanSansNeo-Bold";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* rem 단위 기준 */
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: "SpoqaHanSansNeo-Regular";
+	font-size: 1.6rem;
+	color: #121314;
+}
+
+strong {
+	font-family: "SpoqaHanSansNeo-Bold";
+}
+
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+
+.wrap {
+	display: flex;
+	gap: 8%;
+	width: 120rem;
+	max-width: calc(100% - 6rem);
+	margin: 24rem auto;
+}
+
+.section-text h1 {
+	font-size: 7rem;
+	font-weight: normal;
+	word-break: keep-all;
+}
+
+.section-text p {
+	margin-top: 2rem;
+	font-size: 2rem;
+	color: #47494d;
+	line-height: 1.5;
+}
+
+.section-field {
+	flex-basis: 40.5%;
+	flex-shrink: 0;
+}
+
+.section-field ul {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.section-field ul li a {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 15.2rem;
+	width: 100%;
+	height: 100%;
+	padding: 4rem 3rem 3rem 4rem;
+	box-sizing: border-box;
+	border-radius: 2rem;
+	color: #fff;
+}
+
+.field-video a {
+	background: url(./img/background1.jpg) no-repeat 50% 50% / cover;
+}
+
+.field-book a {
+	background: url(./img/background2.jpg) no-repeat 50% 50% / cover;
+}
+
+.section-field .field-title {
+	display: block;
+	font-family: "SpoqaHanSansNeo-Bold";
+	font-size: 3rem;
+}
+
+.section-field .field-go {
+	display: block;
+	text-align: right;
+	padding-right: 1.3em;
+	background: url(./img/arrow.svg) no-repeat right 50% / 1.25em;
+	font-size: 1.6rem;
+}
+
+/* 태블릿 */
+@media (max-width: 768px) {
+	.wrap {
+		flex-direction: column;
+		gap: 6rem;
+		margin: 10rem auto;
+	}
+	.section-text p {
+		font-size: 1.8rem;
+	}
+	.section-field ul {
+		flex-direction: row;
+	}
+	.section-field ul li {
+		flex-basis: 50%;
+
+	}
+
+	.section-field ul li a {
+		padding: 3em 3em 2em 3em;
+		gap: 9.8rem;
+		font-size: 1rem;
+	}
+	.section-field .field-title {
+		font-size: 2.4em;
+	}
+}
+
+/* 모바일 */
+@media (max-width: 500px) {
+	.wrap {
+		gap: 4rem;
+		/* 32px 만큼의 좌우 여백을 위해 3.2rem을 빼줌 */
+		max-width: calc(100%-3.2rem);
+	}
+
+	.section-text h1 {
+		font-size: 3.6rem;
+	}
+	.section-text p {
+		font-size: 1.4rem;
+		margin-top: 1.4rem;
+
+	}
+	.section-field ul{
+		flex-direction: column;
+		gap: 1.4rem;
+	}
+	.section-field ul li a {
+		padding: 3em 3em 2em 3em;
+		gap: 11.2rem;
+	}
+	.section-field .field-title {
+		font-size: 2em;
+	}
+
+	.section-field .field-go {
+		font-size: 1.4rem;
+	}
 }
