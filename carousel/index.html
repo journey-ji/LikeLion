@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포켓몬</title>
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <article id="app">
+        <h2>랜덤 영화 불러오기</h2>
+        <div class="cont-carousel">
+            <button class="btn-pre" type="button">이전</button>
+            <ul class="list-item">
+                <li><img src="https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg" alt=""></li>
+                <li><img src="./img/poster2.jpg" alt=""></li>
+                <li><img src="./img/poster3.jpg" alt=""></li>
+                <li><img src="./img/poster4.jpg" alt=""></li>
+                <li><img src="./img/poster5.jpg" alt=""></li>
+                <li><img src="./img/poster6.jpg" alt=""></li>
+                <li><img src="./img/poster7.jpg" alt=""></li>
+            </ul>
+            <button class="btn-next" type="button">다음</button>
+        </div>
+        
+    </article>
+<!-- 해야할 것 
+    1. fetch로 json 파일 가져오기
+    2. json 파일에서 poster_path 가져오기
+    3. poster[0]로 이미지 불러오기
+ -->
+    <script>
+        const center = document.querySelector('.list-item');
+        const items = document.querySelectorAll('.list-item li');
+        const angle = 360 / items.length;
+        const preBtn = document.querySelector('.btn-pre')
+        const nexBtn = document.querySelector('.btn-next')
+        let random_movie = 550;
+        
+        let img_url = `https://api.themoviedb.org/3/movie/${random_movie}/images?api_key=3978573dbb0bb023a5f7c9fbb4d079aa&callback=test`
+        let currAngle = 0;
+
+        preBtn.addEventListener('click',()=>{
+            currAngle -= angle;
+            center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        })
+        nexBtn.addEventListener('click',()=>{
+            currAngle += angle;
+            center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        })
+        
+    </script>
+</body>
+</html>
