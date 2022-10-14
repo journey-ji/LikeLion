@@ -199,6 +199,8 @@
                     for(let belong of pickedCokes){
                         if(belong.children[1].textContent === coke.children[1].textContent){
                             find = true
+                            
+                            // 현재 남아있는 코크의 개수한도 내 에서만 
                             if(cokes[coke.children[1].textContent]>parseInt(parseInt(belong.nextElementSibling.innerText))){
                                 belong.nextElementSibling.innerText= parseInt(belong.nextElementSibling.innerText)+1
                             }
