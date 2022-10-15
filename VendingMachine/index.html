@@ -195,7 +195,7 @@
                 if(coke.children.length===4){
                     alert('품절된 상품은 선택하실 수 없습니다.')
                 }else{
-                    getCokeCnt ++;
+                    
                     coke.classList.add('coke-click-on')
                     // pickedCokes = 현재 픽된 코크
                     let pickedCokes = document.querySelectorAll('#cokes-belong ul li figure')
@@ -207,6 +207,7 @@
                             // 현재 남아있는 코크의 개수한도 내 에서만 
                             if(cokes[coke.children[1].textContent]>parseInt(parseInt(belong.nextElementSibling.innerText))){
                                 belong.nextElementSibling.innerText= parseInt(belong.nextElementSibling.innerText)+1
+                                getCokeCnt ++;
                             }
                         }
                     }
@@ -246,6 +247,7 @@
                 // 2. getcokes 모두 없애기
                 let belongs = document.querySelector('#cokes-belong')
                 belongs.children[0].innerHTML ="";
+                getCokeCnt = 0;
             }else{ // 잔액 충분 시
                 // 1. 모든 cokes들의 onclick 없애기
                 for(let x of cokeBtns){
@@ -284,11 +286,13 @@
                     }
                     // 마지막으로 총 금액 더해주기
                     document.querySelector('#total-amount').innerText = sumMoney(document.querySelector('#total-amount').innerText,(x.lastElementChild.textContent*1000).toString())
+                    balance.innerHTML = difMoney(balance.textContent,(x.lastElementChild.textContent*1000).toString())+'<span> 원</span>'
                 }
                 
                 // 3. getcokes 모두 없애기
                 
                 belongs[0].parentNode.innerHTML = "";
+                getCokeCnt = 0;
             }
             
         })
