@@ -86,30 +86,30 @@
             </div>
             <div class="cont-items">
                 <p>획득한 음료</p>
-                <div class="cont-cokes">
+                <div id="mine" class="cont-cokes">
                     <ul>
-                        <li>
+                        <li id="get-Original_Cola">
                             <figure>
                                 <img src="./mediaquery/Original_Cola.png" alt="">
                                 <figcaption>Original_Cola</figcaption>
                             </figure>
                             <p>1</p>
                         </li>
-                        <li>
+                        <li id="get-Green_Cola">
                             <figure>
                                 <img src="./mediaquery/Green_Cola.png" alt="">
                                 <figcaption>Green_Cola</figcaption>
                             </figure>
                             <p>2</p>
                         </li>
-                        <li>
+                        <li id="get-Orange_Cola">
                             <figure>
                                 <img src="./mediaquery/Orange_Cola.png" alt="">
                                 <figcaption>Orange_Cola</figcaption>
                             </figure>
                             <p>1</p>
                         </li>
-                        <li>
+                        <li id="get-Violet_Cola">
                             <figure>
                                 <img src="./mediaquery/Violet_Cola.png" alt="">
                                 <figcaption>Violet_Cola</figcaption>
@@ -118,11 +118,12 @@
                         </li>
                     </ul>
                 </div>
-                <p>총금액: 9,000 원</p>
+                <p>총금액: <span id="total-amount">9,000</span> 원</p>
             </div>
         </div>
     </div>
     <script>
+        let getCokeCnt = 3;
         let cokes = {
             'Original_Cola':4,
             'Violet_Cola':0,
@@ -139,6 +140,7 @@
             'Green_Cola':2,
             'Orange_Cola':1,
         }
+
         const balance = document.querySelector('#balance')
         const poketMoney = document.querySelector('#poket-money')
         const depositMoney = document.querySelector('#deposit-money')
@@ -184,6 +186,7 @@
         // coke 버튼
         const cokeBtns = ['coke-orig','coke-viol','coke-yell','coke-cool','coke-gree','coke-oran']
 
+        // 
         for(let x of cokeBtns){
             let coke = document.querySelector(`#${x}`)
             coke.addEventListener('click',()=>{
@@ -192,6 +195,7 @@
                 if(coke.children.length===4){
                     alert('품절된 상품은 선택하실 수 없습니다.')
                 }else{
+                    getCokeCnt ++;
                     coke.classList.add('coke-click-on')
                     // pickedCokes = 현재 픽된 코크
                     let pickedCokes = document.querySelectorAll('#cokes-belong ul li figure')
@@ -199,17 +203,16 @@
                     for(let belong of pickedCokes){
                         if(belong.children[1].textContent === coke.children[1].textContent){
                             find = true
-                            
+
                             // 현재 남아있는 코크의 개수한도 내 에서만 
                             if(cokes[coke.children[1].textContent]>parseInt(parseInt(belong.nextElementSibling.innerText))){
                                 belong.nextElementSibling.innerText= parseInt(belong.nextElementSibling.innerText)+1
                             }
-                            
                         }
                     }
                     if(!find){
-                        pickedCokes[pickedCokes.length-1].parentElement
-                        .insertAdjacentHTML('afterend',`
+                        let appendCoke = document.querySelector('#cokes-belong ul')
+                        appendCoke.innerHTML += `
                         <li>
                             <figure>
                                 <img src="./mediaquery/`+coke.children[1].textContent+`.png" alt="">
@@ -217,7 +220,8 @@
                             </figure>
                             <p>1</p>
                         </li>
-                        `)
+                        `
+                        
                     }
                 }
                 
@@ -225,6 +229,72 @@
             
         }
 
+
+        // 획득 버튼
+        getBtn.addEventListener('click',()=>{
+            // 잔액부족 시
+            if(parseInt(balance.textContent.replace(',',''))<(getCokeCnt*1000)){
+                alert('입금 잔액이 부족합니다.')
+                // 1. 모든 cokes들의 onclick 없애기
+
+                for(let x of cokeBtns){
+                    let coke = document.querySelector(`#${x}`)
+                    coke.classList.remove('coke-click-on')
+                    console.log(coke)
+                }
+
+                // 2. getcokes 모두 없애기
+                let belongs = document.querySelector('#cokes-belong')
+                belongs.children[0].innerHTML ="";
+            }else{ // 잔액 충분 시
+                // 1. 모든 cokes들의 onclick 없애기
+                for(let x of cokeBtns){
+                    let coke = document.querySelector(`#${x}`)
+                    coke.classList.remove('coke-click-on')
+                }
+                
+                // 픽한 코크들,,
+                let belongs = document.querySelectorAll('#cokes-belong ul li')
+                
+                // 2. 획득한 음료에 저장하기
+                let cokesGetted = document.querySelector('#mine ul')
+                
+                for(let x of belongs){
+                    let temp = x.firstElementChild.lastElementChild.textContent
+                    // 소유하고 있는 콜라라면
+                    if(mycokes[temp]>0){
+                        mycokes[temp] += parseInt(x.lastElementChild.textContent);
+                        let item = document.querySelector(`#get-${temp}`)
+                        item.lastElementChild.innerHTML = mycokes[temp]
+                        
+                    }else{ 
+                        //소유하지 않은 콜라라면
+                        //1. mycokes에 개수부터 올리기
+                        mycokes[temp] += parseInt(x.lastElementChild.textContent);
+                        //2. 새로 리스트 만들어서 넣어주기
+                        cokesGetted.innerHTML += `
+                        <li id="get-${temp}">
+                            <figure>
+                                <img src="./mediaquery/${temp}.png" alt="">
+                                <figcaption>${temp}</figcaption>
+                            </figure>
+                            <p>${mycokes[temp]}</p>
+                        </li>
+                        `;
+                    }
+                    // 마지막으로 총 금액 더해주기
+                    console.log()
+                    document.querySelector('#total-amount').innerText = sumMoney(document.querySelector('#total-amount').innerText,(x.lastElementChild.textContent*1000).toString())
+                }
+                
+                // 3. getcokes 모두 없애기
+                
+                belongs[0].parentNode.innerHTML = "";
+            }
+            
+        })
+        
+        
     </script>
 </body>
 </html>
