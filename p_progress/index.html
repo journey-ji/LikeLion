@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    #mainForm {
+      width: 460px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ff8787;
+    }
+    #mainForm fieldset {
+      border: none;
+    }
+
+    #mainForm legend {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    #mainForm label {
+      display: block;
+    }
+    #mainForm input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+
+    }
+    /* valid 가상요소 : input 값에 알맞은 값이 들어온다면 !! */
+    #mainForm input:valid {
+      background-color: #e5ebb2;
+    }
+    #mainForm button {
+      float: right;
+      padding: 10px;
+      margin-left: 10px;
+      background-color: #fbc4b4;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+    }
+    #mainForm progress {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <form id="mainForm">
+      <fieldset>
+          <legend>JS 스터디 모집 설문조사</legend>
+          <progress max="100" value="0" class="bar-progress"></progress>
+          <p class="msg-notice">설문지를 작성해주세요!</p>
+
+          <label for="q1">질문1. 무엇을 가장 배우고 싶으세요?</label>
+          <input type="text" id="q1" required>
+          <label for="q2">질문2. 시간은 언제가 적당한가요?</label>
+          <input type="text" id="q2" required>
+          <label for="q3">질문3. 몇 시간정도 예상하세요?</label>
+          <input type="text" id="q3" required>
+          <label for="q4">질문4. 난이도를 조정한다면?</label>
+          <input type="text" id="q4" required>
+          <label for="q5">질문5. 끝으로 하고싶은 말이 있나요?</label>
+          <input type="text" id="q5" required>
+
+          <button type="submit">제출하기</button>
+          <button type="reset">초기화</button>
+      </fieldset>
+  </form>
+  <script>
+    const mainFrom  = document.querySelector('#mainForm')
+    const progressBar = mainFrom.querySelector('.bar-progress')
+    const message = mainFrom.querySelector('.msg-notice')
+    const inputs = mainFrom.querySelectorAll('input')
+    const btnReset = mainFrom.querySelector('button[type="reset"]')
+
+
+    
+    mainFrom.addEventListener('keyup',()=>{
+      // let validCounter = 0;  // 유효한 인풋의 갯수를 저장
+      // inputs.forEach((item)=>{
+      //   if(item.validity.valid){
+      //     validCounter++
+      //   }
+      // })
+      const result = Array.prototype.filter.call(inputs,(item)=>{
+        return item.validity.valid
+      })
+      console.log(result)
+      switch(result.length){
+        case 1:
+          message.textContent = " 1답 완료, 계속 진행하세요 !"
+          progressBar.setAttribute('value',20)
+          break
+        case 2:
+          message.textContent = " 2답 완료, 계속 진행하세요 !"
+          progressBar.setAttribute('value',40)  
+          break
+        case 3:
+          message.textContent = " 3답 완료, 계속 진행하세요 !"
+          progressBar.setAttribute('value',60)
+          break
+        case 4:
+          message.textContent = " 4답 완료, 계속 진행하세요 !"
+          progressBar.setAttribute('value',80)
+          break
+        case 5:
+          message.textContent = "고생하셨습니다. 제출버튼을 눌러주세요."
+          progressBar.setAttribute('value',100)
+          break
+
+        default:
+          message.textContent = "설문지를 작성해주세요!"
+          progressBar.setAttribute('value',0)
+          
+      }
+    })
+    
+    btnReset.addEventListener('click',()=>{
+      message.textContent = "설문지를 작성해주세요!"
+      progressBar.setAttribute('value',0)
+          
+    })
+  </script>
+</body>
+
+</html>
