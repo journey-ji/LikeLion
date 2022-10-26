@@ -1,12 +1,24 @@
-function Factory(foods) {
- // 로봇객체를 찍어냄
- //로봇인스턴스는 음식이름의 배열을 전달받으면 랜덤하게 뽑아냄
- this.foods = foods
- 
+class 소세지 {
+  constructor(재료1,재료2){
+    this.재료1 = 재료1
+    this.재료2 = 재료2
+  }
+  taste(){
+    console.log(this.재료1+'와 '+this.재료2+'맛이 난다.')
+  }
 }
-Factory.prototype.get_food = function() {
-  console.log(this.foods[parseInt(Math.random()*this.foods.length)])
- }
-let robot1 = new Factory(['pizza','hotdog','juice','pasta'])
-let robot2 = new Factory(['피자','핫도그','주스','파스타'])
-console.log(robot1.__proto__.get_food === robot2.__proto__.get_food)
+
+class 불소세지 extends 소세지 {
+  constructor(재료1,재료2){
+    super(재료1,재료2)
+  }
+  tasteOwn(){
+    this.taste()
+    console.log('불맛이 쩐다')
+  }
+
+}
+const temp = new 소세지('파','소고기')
+const temp2 = new 불소세지('파','소고기')
+temp.taste()
+temp2.tasteOwn()
