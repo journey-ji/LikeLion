@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+      background-color: black;
+      height: 6000px;
+      font-family: 'nanumsquare';
+    }
+    div {
+      margin-top: 1000px;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: all 1s;
+      
+    }
+  </style>
+  <div class="div1"><h1>iPhone 15 출시</h1></div>
+  <div><h1>충전포트를 USB-C타입으로 바꿔달라고요?</h1></div>
+  <div><h1>더 나은 대안을 준비했습니다. 충전포트를 제거했죠</h1></div>
+  <div><img src="" alt=""></div>
+  <script>
+    let observer = new IntersectionObserver((e)=>{
+      e.forEach((박스)=>{
+        if(박스.isIntersecting){  //박스가 보일때
+        박스.target.style.opacity = 1
+        박스.target.style.transform = 'rotate(360deg)'
+      }else { //박스가 안보일때
+        박스.target.style.opacity = 0
+      }
+    })
+      
+      
+    })
+    const box = document.querySelectorAll('div')
+    observer.observe(box[0])
+    observer.observe(box[1])
+    observer.observe(box[2])
+    observer.observe(box[3])
+  </script>
+</body>
+</html>
