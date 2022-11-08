@@ -1,0 +1,128 @@
+body {
+  background: radial-gradient(96.74% 276.79% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+.wrap {
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tit-logo {
+  display: block;
+  margin: 72px 0 60px 0;
+}
+.tit-logo img {
+  
+  width: 248px;
+  height: 48px;
+  object-fit: cover;
+}
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+.cont-timer {
+  display: flex;
+  width: 400px;
+  height: 360px;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(144.07deg, #5572BB 2.13%, #374B7C 102.97%);
+  /* shadow */
+
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+  border-radius: 16px;
+}
+.cont-timer h2 {
+  display: block;
+  width: 312px;
+  font-family: 'Pretendard';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  border-bottom: 1px ridge  #3D538A;
+  padding-bottom: 23px;
+  padding-top: 48px;
+}
+.boxes-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  width: 284px;
+}
+
+.boxes-time > img {
+  height: 26px;
+  ;
+}
+.box-hrs,
+.box-min,
+.box-sec {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./img/box.png');
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+  font-weight: 700;
+  font-family: 'Pretendard';
+  cursor:pointer;
+}
+.cont-btns button{
+  display: inline-block;
+  padding: 0;
+  border: 0;
+}
+
+.cont-btns button img {
+  display: block;
+}
+.cont-btns .btn-start {
+  width: 112px;
+  height: 48px;
+  border-radius: 50px;
+  background: #324577;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cont-btns .btn-start.disabled {
+  background-image: url('./img/start-disabled.png');
+}
+
+.cont-btns .btn-start.abled {
+  background-image: url('./img/start-default.png');
+  cursor: pointer;
+}
+
+.cont-btns .btn-start.paused {
+  background-image: url('./img/pause.png');
+  cursor: pointer;
+}
+.cont-btns .btn-reset {
+  width: 112px;
+  height: 48px;
+  border-radius: 50px;
+  background: #324577;
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+.cont-btns .btn-reset.disabled {
+  background-image: url('./img/reset-disabled.png');
+}
+.cont-btns .btn-reset.abled {
+  background-image: url('./img/reset-default.png');
+  cursor: pointer;
+}

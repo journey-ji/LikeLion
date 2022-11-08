@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타이머</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="tit-logo"><span class="hidden">Weniv</span><img src="./img/weniv-logo.svg" alt=""></h1>
+    <div class="cont-timer">
+      <h2>TIMER</h2>
+      <div class="boxes-time">
+        <div class="box-hrs">00</div>
+        <img src="./img/dot.png" alt="">
+        <div class="box-min">00</div>
+        <img src="./img/dot.png" alt="">
+        <div class="box-sec">00</div>
+      </div>
+      <div class="cont-btns">
+        <button class="btn-start disabled"></button>
+        <button class="btn-reset disabled"></button>
+      </div>
+  </div>
+  <script>
+    const btnHrs = document.querySelector('.box-hrs')
+    const btnMin = document.querySelector('.box-min')
+    const btnSec = document.querySelector('.box-sec')
+    const btnStart = document.querySelector('.btn-start')
+    const btnReset = document.querySelector('.btn-reset')
+    timeBtns = [btnHrs,btnMin,btnSec]
+    timeBtns.forEach(element => {
+      element.addEventListener('click',()=>{
+        btnStart.classList.add('abled')
+        btnStart.classList.remove('disabled')
+        btnReset.classList.add('abled')
+        btnReset.classList.remove('disabled')
+      })
+    });
+    btnSec.addEventListener('click',()=>{
+      let time = btnSec.innerText
+      time = parseInt(time)+10
+      btnSec.innerText = time
+      if(parseInt(btnSec.innerText)>=60){
+        btnMin.innerText = parseInt(btnMin.innerText) +1
+        btnSec.innerText = parseInt(btnSec.innerText) -60
+      }
+    })
+    btnMin.addEventListener('click',()=>{
+      let time = btnMin.innerText
+      time = parseInt(time)+10
+      btnMin.innerText = time
+      if(parseInt(btnMin.innerText)>=60){
+        btnHrs.innerText = parseInt(btnHrs.innerText) +1
+        btnMin.innerText = parseInt(btnMin.innerText) -60
+      }
+    })
+    btnHrs.addEventListener('click',()=>{
+      let time = btnHrs.innerText
+      time = parseInt(time)+1
+      btnHrs.innerText = time
+    })
+    btnStart.addEventListener('click',()=>{
+      let totalSec = parseInt(btnHrs.innerText)*60*60+parseInt(btnMin.innerText)*60+parseInt(btnSec.innerText)
+      if(totalSec){
+        let timer = setInterval(()=>{
+          if(parseInt(btnSec.innerText)<=0 &&parseInt(btnMin.innerText)<=0&&parseInt(btnHrs.innerText)<=0){
+            clearInterval(timer) 
+            timeBtns.forEach(e=>{
+            e.innerText = '00'
+            btnStart.classList.remove('paused')
+            btnReset.classList.remove('abled')
+            btnStart.classList.add('disabled')
+            btnReset.classList.add('disabled')
+            })
+          }
+          else{
+            totalSec -=1
+            btnHrs.innerText = parseInt(totalSec/3600)
+            btnMin.innerText = parseInt((totalSec%3600)/60)
+            btnSec.innerText = (totalSec%3600)%60
+          }
+        },1000)
+        btnStart.classList.remove('abled')
+        btnStart.classList.add('paused')
+        
+      }
+      if(btnStart.classList.contains('paused')){
+        // clearInterval(timer)
+      }
+      
+    })
+    
+    btnReset.addEventListener('click',()=>{
+      timeBtns.forEach(e=>{
+        e.innerText = '00'
+        btnStart.classList.remove('abled')
+        btnReset.classList.remove('abled')
+        btnStart.classList.add('disabled')
+        btnReset.classList.add('disabled')
+      })
+    })
+  </script>
+</body>
+</html>

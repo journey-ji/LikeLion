@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <!-- <div class="container">
+      <section>
+        <h2 class="section-title">섹션제목</h2>
+        <img class="section-img" src="img.jpg" alt="">
+        <p class="section-contents">내용</p>
+      </section>
+    </div> -->
+  </div>
+  <script>
+    const contRoot =  document.querySelector('#root')
+    const container = document.createElement('div')
+    const section = document.createElement('section')
+    const h2 = document.createElement('h2')
+    const img = document.createElement('img')
+    const p = document.createElement('p')
+    p.className='section-contents'
+    p.innerText = '내용'
+    img.className='section-img'
+    img.src = 'img.jpg'
+    h2.className = 'section-title'
+    h2.innerText = '섹션제목'
+    section.append(h2,img,p)
+    container.className = 'container'
+    contRoot.append(section)
+    
+    
+  </script>
+</body>
+</html>
