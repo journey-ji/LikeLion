@@ -1,67 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>리액트 1분만에 추가해보기!</title>
-    </head>
-    <body>
-        <div id="root">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
 
-        </div>
-  
-        <script
-            src="https://unpkg.com/react@17/umd/react.development.js"
-            crossorigin
-        ></script>
-        <script
-            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-            crossorigin
-        ></script>
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        <script type="text/babel">
-            const Header =()=>{
-              return (<div>header
-                <div>menu</div>
-                </div>)
-            } 
-            const Main = ()=>{
-              return(
-              <div>main
-                <h1>hello world</h1>
-                <p>hello world2</p>
-                </div>
-            )
-            } 
-            const Product =()=>{
-              return (
-              <div>product
-                <div>best seller 옷</div>
-                <div>best seller 옷</div>
-                <div>best seller 옷</div>
-                <div>best seller 옷</div>
-                <div>best seller 옷</div>
-                <div>best seller 옷</div>
-                <div>best seller 옷</div>
-                <div>best seller 옷</div>
-                </div>
-              )
-            } 
-            const Footer = ()=>{
-              return (
-              <div>footer!
-                </div>
-            )
-            } 
-            const app = (
-              <div>
-                <Header/>
-                <Main/>
-                <Product/>
-                {Footer()}
-              </div>
-            )
-            const domContainer = document.querySelector("#root");
-            ReactDOM.render(app, domContainer);
-        </script>
-    </body>
+  </div>
+  <script src="index.js"></script>
+</body>
 </html>
