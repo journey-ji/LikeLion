@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>쇼핑몰 웹 페이지</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+        integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/babel">
+        const data = fetch('http://test.api.weniv.co.kr/mall')
+        .then(response=>response.json())
+        .then(response=>console.log(response))
+        
+        const Header = (props)=>{
+            return <p>test1</p>
+        }
+        const Main = (props)=>{
+            return <p>test2</p>
+        }
+        const Card = (props)=>{
+            return <p>test3</p>
+        }
+        const Product = (props)=>{
+            return <p>test4</p>
+        }
+        const Footer = (props)=>{
+            return <p>test5</p>
+        }
+        const body = (
+            <div>
+                <Header/>
+                <Main/>
+                <Card/>
+                <Product/>
+                <Footer/>
+            </div>
+        )
+        const domContainer = document.querySelector('#root')
+        ReactDOM.render(body,domContainer)
+</script>
+</body>
+</html>
