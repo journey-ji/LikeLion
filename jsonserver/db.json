@@ -151,48 +151,31 @@
       "modDate": "2022-02-28"
     },
     {
-      "id": 8,
-      "productName": "제주코딩베이스캠프 365 아무것도 하지않기 챌린지",
-      "price": 8000000000,
-      "stockCount": 2,
-      "thumbnailImg": "asset/img/7/thumbnailImg.jpg",
-      "option": [],
-      "discountRate": 0,
-      "shippingFee": 0,
-      "detailInfoImage": [
-        "asset/detail/7/detail1.png",
-        "asset/detail/7/detail2.png"
-      ],
+      "productName": "떡볶이가맛있쥬(근데비쌈)",
+      "price": "135000",
+      "stockCount": "3",
       "viewCount": 0,
-      "pubDate": "2022-02-28",
-      "modDate": "2022-02-28"
+      "pubDate": "",
+      "modDate": "",
+      "id": 8
     },
     {
-      "id": 9,
-      "productName": "제주코딩베이스캠프 1000일 놀고먹는제주캠프",
-      "price": 80000000,
-      "stockCount": 1,
+      "productName": "닭갈비먹고싶쥬(안질림)",
+      "price": "23500",
+      "stockCount": "13",
       "viewCount": 0,
-      "pubDate": "2022-02-28",
-      "modDate": "2022-02-28"
+      "pubDate": "2022-11-13",
+      "modDate": "2022-11-13",
+      "id": 9
     },
     {
-      "productName": "hello",
-      "price": "100",
-      "stockCount": "12",
+      "productName": "육회한접시(소주필수)",
+      "price": "33000",
+      "stockCount": "23",
       "viewCount": 0,
-      "pubDate": "2022-11-07",
-      "modDate": "2022-11-07",
+      "pubDate": "2022-11-13",
+      "modDate": "2022-11-13",
       "id": 10
-    },
-    {
-      "productName": "test1",
-      "price": "2323",
-      "stockCount": "14",
-      "viewCount": 0,
-      "pubDate": "2022-11-07",
-      "modDate": "2022-11-07",
-      "id": 11
     }
   ]
 }
