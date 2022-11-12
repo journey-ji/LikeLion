@@ -2,7 +2,12 @@
 <html lang="ko">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>쇼핑몰 웹 페이지</title>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="src/style/style.css">
 </head>
 
 <body>
@@ -13,36 +18,76 @@
         integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/babel">
-        const data = fetch('http://test.api.weniv.co.kr/mall')
-        .then(response=>response.json())
-        .then(response=>console.log(response))
         
-        const Header = (props)=>{
-            return <p>test1</p>
+        
+
+        async function getProductdata(){
+          const response = await fetch('http://test.api.weniv.co.kr/mall')
+          const result = response.json()
+          return result
         }
-        const Main = (props)=>{
-            return <p>test2</p>
-        }
-        const Card = (props)=>{
-            return <p>test3</p>
-        }
-        const Product = (props)=>{
-            return <p>test4</p>
-        }
-        const Footer = (props)=>{
-            return <p>test5</p>
-        }
-        const body = (
+
+        getProductdata().then(product=>{
+          //console.log(data)
+          //console.log(product)
+          const Main = function () {
+            return <h1 class="ir">상품목록 페이지</h1>
+          }
+
+          const Card = function (props) {
+              //console.log(props.goods)
+              const url = 'http://test.api.weniv.co.kr/' + props.goods.thumbnailImg
+              return (
+                  <li class="product-item">
+                      <div class="product-img">
+                          <img src={url} />
+                      </div>
+                      <strong class="product-name sl-ellipsis">{props.goods.productName}</strong>
+                      <button class="like-btn"></button>
+                      <div class="product-price">
+                          <strong class="price m-price">{props.goods.price}<span>원</span></strong>
+                      </div>
+                  </li>
+              )
+          }
+
+          const Cart = function () {
+              return (
+                  <a class="link-btn cart-link">
+                  </a>
+              )
+          }
+
+          const Product = function ({item}) {
+              // console.log(item)
+              const result = []
+              item.forEach(item =>{
+                result.push(<Card goods={item} key={item.id} />)
+              })
+              return (
+                  <main class="product">
+                      <ul class="product-list">
+                        {result}
+                      </ul>
+                  </main>
+              )
+          }
+          const body = (
             <div>
-                <Header/>
-                <Main/>
-                <Card/>
-                <Product/>
-                <Footer/>
+                <Main />
+                <Product item={product} />
             </div>
-        )
-        const domContainer = document.querySelector('#root')
-        ReactDOM.render(body,domContainer)
-</script>
+          )
+
+          const domContainer = document.querySelector('#root')
+          ReactDOM.render(body, domContainer)
+          //console.log(ReactDOM)
+        })
+
+        
+        // console.dir(domContainer)
+        // console.log(domContainer)
+    </script>
 </body>
+
 </html>
