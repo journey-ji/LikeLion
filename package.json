@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "node": "^19.0.0"
+    "node": "^19.0.0",
+    "styled-components": "^5.3.6",
+    "styled-reset": "^4.4.2"
   },
   "name": "likelion",
   "description": "",
