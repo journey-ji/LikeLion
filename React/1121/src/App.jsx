@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { createContext } from 'react'
 
 const UserInfo = createContext({name:"gray",id:"grayIsFree"})
@@ -34,5 +35,11 @@ const HelloLicatTwo = ()=>{
 export default function App() {
   return (
     <HelloLicat/>
+=======
+
+export default function App() {
+  return (
+    <div>App</div>
+>>>>>>> d80aeb7d0509eb980edd94e9bff1573151a78427
   )
 }
