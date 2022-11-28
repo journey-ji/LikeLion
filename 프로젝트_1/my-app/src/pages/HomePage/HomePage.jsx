@@ -1,47 +1,60 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import Card from '../../components/Card/Card'
 import Cart from '../../components/Cart/Cart'
 import FailLoadData from '../../components/Shared/FailLoadData/FailLoadData'
+import {callAPIResponse} from '../../database/callApi'
 import { data } from '../../database/data'
 import './homePage.css'
 
+const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  margin-top: 160px;
+  padding-bottom: 156px;    
+`
+const ProductList = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  width: 1260px;
+  margin-right: 60px;   
+`
 export default function HomePage() {
-    // console.log(data)
-    // const data = null
-    const [error,setError] = useState(null)
-    const [isLoaded,setIsLoaded] = useState(false)
-    const [items,setItems] = useState([])
+    const [loadData,setLoadData] = useState(null)
+
     useEffect(()=>{
-      const getData = async ()=>{
-        try{
-          const res = await fetch('https://test.api.weniv.co.kr/mall')
-          const result = await res.json()
-          setItems(result)
-          setIsLoaded(true)
-        }catch(error){
-          setError(error)
-        }
-      }
+        console.log('로딩중')
     },[])
-    if(error){
-      console.log(error)
-      return <div>에러발생</div>
-    } else if(!isLoaded){
-      return <div>로딩중</div>
-    }
+    useEffect(()=>{
+        if(loadData===null){
+            return
+        } else {
+            console.log('로딩완료')
+        }
+    },[loadData])
+    useContext(callAPIResponse).then(d=>{
+        console.log('세팅')
+        console.log(d)
+        setLoadData(d)
+    })
+
+    
+        
     return (
-        <main className='product'>
+        <Main>
         {
-            data !== null ? 
-              <>
-                  <ul className='product-list'>
-                      {data.map(item =><Card key={item.id} {...item}/>)}
-                  </ul>
-                  <Cart/>
-              </>
+            loadData !== null ? 
+                <>
+                    <ProductList>
+                        {loadData.map(item =><Card key={item.id} {...item}/>)}
+                    </ProductList>
+                    <Cart/>
+                </>
             : <FailLoadData />
         }
-        </main>
+        </Main>
     )
+    
 }
