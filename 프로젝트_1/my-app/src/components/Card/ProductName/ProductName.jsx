@@ -1,8 +1,16 @@
 import React from 'react'
-import './productName.css'
+import styled from 'styled-components'
+// import './productName.css'
+
+const PName = styled.strong`
+  font-size: 18px;
+  line-height: 22px;
+  width: 338px;
+  margin: 20px 0 10px;
+`
 
 export default function ProductName({productName}) {
   return (
-    <strong className='product-name sl-ellipsis'>{productName}</strong>
+    <PName className='sl-ellipsis'>{productName}</PName>
   )
 }

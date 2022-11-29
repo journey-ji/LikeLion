@@ -6,7 +6,7 @@ import Cart from '../../components/Cart/Cart'
 import FailLoadData from '../../components/Shared/FailLoadData/FailLoadData'
 import {callAPIResponse} from '../../database/callApi'
 import { data } from '../../database/data'
-import './homePage.css'
+
 
 const Main = styled.main`
   display: flex;
