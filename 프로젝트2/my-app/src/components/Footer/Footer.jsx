@@ -8,6 +8,5 @@ export default function Footer() {
             <button class="top-button">TOP</button>
         </div>
     </footer>
-
   )
 }
