@@ -2,9 +2,9 @@ import HomePage from './pages/HomePage/HomePage'
 import CartPage from './pages/CartPage/CartPage'
 import {createGlobalStyle} from 'styled-components'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import reset from 'styled-reset'
+
 const GlobalStyles = createGlobalStyle`
-  ${reset}
+  
   :root {
     --main-color: #6327FE;
     --txt-color: #333333;
@@ -95,23 +95,15 @@ const GlobalStyles = createGlobalStyle`
   }
 
 `
+
 function App() {
+  console.log(document.location.href)
   return (
     <>
       <GlobalStyles />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-        <Route 
-          path="/"
-          element={<HomePage/>} 
-          />
-          <Route 
-          path="/cartPage"
-          element={<CartPage/>} 
-          />
-        </Routes>
+        <HomePage />
       </BrowserRouter>
-      
     </>
   );
 }

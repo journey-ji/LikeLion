@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        /* 해당속성을 required가 없는 input과 시각적인 구분을 가능하게 합니다. */
+        input:valid {
+            border: 5px solid skyblue;
+        }
+
+        /* 올바르지 않은 입력이 이루어진 input을 선택합니다. */
+        input:invalid {
+            border: 5px solid pink;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- minlength="" maxlength="" : 데이터의 길이를 제한합니다. -->
+    <!-- number, email, text, password, url ...  -->
+    <!-- min="" max="" : 숫자의 크기를 제한합니다. -->
+    <form action="">
+      <label for="">사과를 입력하세요</label>
+      <input type="text" pattern="사과">
+
+      <label for="">사과 혹은 배중 하나를 입력하세요</label>
+      <input type="text" pattern="사과|배">
+
+      <label for="">세글자만 입력할 수 있습니다.</label>
+      <input type="text" pattern="...">
+      
+      <label for="">첫번째 문자는 사,과,배, 두번째 문자는 1,2,3 만 입력할 수 있습니다.</label>
+      <input type="text" pattern="[사|과|배][1|2|3]">
+
+
+      <label for="">한글만 입력이 가능해야 합니다.</label>
+      <input type="text" pattern="[ㄱ-ㅎ가-힣]">
+
+      <label for="">한글과 숫자만 글자 수 제한 없이 입력이 가능해야 합니다.</label>
+      <input type="text" pattern="[ㄱ-ㅎ 가-힣0-9]*">
+
+      <label for="">주민등록번호를 입력하세요</label>
+      <input type="number" pattern="[0-9]{13}">
+
+      <label for="">주민등록번호를 입력하세요</label>
+      <input type="email" pattern="">
+
+
+      <button>제출</button>
+    </form>
+</body>
+
+</html>
