@@ -101,7 +101,12 @@ function App() {
   return (
     <>
       <GlobalStyles />
-        <HomePage />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/cartPage' element={<CartPage/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

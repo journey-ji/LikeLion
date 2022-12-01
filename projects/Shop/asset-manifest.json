@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/LikeLion/projects/Shop/static/js/main.8b31ca64.js",
+    "main.js": "/LikeLion/projects/Shop/static/js/main.7a59a50d.js",
     "static/media/icon-shopping-cart-white.svg": "/LikeLion/projects/Shop/static/media/icon-shopping-cart-white.441d73e268955e0e16f25fa56bcbaf72.svg",
     "static/media/icon-heart-on.svg": "/LikeLion/projects/Shop/static/media/icon-heart-on.0f6bbd4903724c3c16387efb41f92a03.svg",
     "static/media/icon-heart.svg": "/LikeLion/projects/Shop/static/media/icon-heart.f68a21bc77488dac8c34b7650d1237ab.svg",
     "index.html": "/LikeLion/projects/Shop/index.html",
-    "main.8b31ca64.js.map": "/LikeLion/projects/Shop/static/js/main.8b31ca64.js.map"
+    "main.7a59a50d.js.map": "/LikeLion/projects/Shop/static/js/main.7a59a50d.js.map"
   },
   "entrypoints": [
-    "static/js/main.8b31ca64.js"
+    "static/js/main.7a59a50d.js"
   ]
 }
