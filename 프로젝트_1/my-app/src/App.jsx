@@ -101,9 +101,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <HomePage />
-      </BrowserRouter>
     </>
   );
 }
