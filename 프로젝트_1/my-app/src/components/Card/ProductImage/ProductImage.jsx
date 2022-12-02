@@ -1,10 +1,24 @@
 import React from 'react'
-import ProductName from '../ProductName/ProductName'
+import styled from 'styled-components'
 
-export default function ProductImage({thumbnailImg, productName}) {
+
+
+const PImg = styled.img`
+    width: ${props=>{
+        if(props.size){
+            return props.size
+        };
+    }};
+
+`
+
+export default function ProductImage({thumbnailImg, productName,size}) {
     // console.log(thumbnailImg)
     const url = 'https://test.api.weniv.co.kr/' + thumbnailImg
+
+    
+    
     return (
-        <img src={url} alt={productName}/>
+        <PImg src={url} alt={productName} size={size}/>
     )
 }
