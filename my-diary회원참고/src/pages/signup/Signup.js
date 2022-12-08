@@ -7,12 +7,10 @@ export default function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [displayName, setDisplayName] = useState('');
-    const { error, isPending, signup } = useSignup();
-
+    const {error,isPending,signup} = useSignup()
 
 
     const handleData = (event) => {
-        console.log(event.target.type);
         if (event.target.type === 'email') {
             setEmail(event.target.value);
         } else if (event.target.type === 'password') {
@@ -22,9 +20,12 @@ export default function Signup() {
         }
     }
 
+
+    // 제출함수 실행시,
     const handleSubmit = (event) => {
         event.preventDefault();
-        signup(email, password, displayName);
+        // signup 함수 실행
+        signup(email,password,displayName)
     }
 
     return (
